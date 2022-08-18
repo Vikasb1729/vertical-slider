@@ -1,0 +1,223 @@
+@charset "utf-8";
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/*for all*/
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1360px;
+  width: 86%; 
+  margin: 0 auto;
+}
+/*=================================
+  main styling starts here
+=================================*/
+.left-slide li:nth-of-type(1) { background-color: #FD3555;}
+.left-slide li:nth-of-type(2) { background-color: #2A86BA;}
+.left-slide li:nth-of-type(3) { background-color: #252E33;}
+.left-slide li:nth-of-type(4) { background-color: #FFB866;}
+
+main {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.left-slide {
+  height: 100%;
+  width: 35%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+}
+
+.left-slide  li {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.left-slide h3 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  margin-top: -30px;
+}
+
+.right-slide {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 35%;
+  width: 65%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.right-slide li {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center ;
+  height: 100%;
+  width: 100%;
+}
+
+.action-buttons button {
+  background-color: #fff;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px;
+} 
+
+.down-button { text-indent: -9999px;}
+
+.down-button::after { 
+  content: '\f063';
+  float: right;
+  font-family: "FontAwesome";
+  text-indent: 0;
+}
+
+.up-button { text-indent: -9999px;}
+
+.up-button::after { 
+  content: '\f062';
+  float: right;
+  font-family: "FontAwesome";
+  text-indent: 0;
+} 
+
+button:hover {
+  color: #222;
+}
+
+button:focus {
+  outline: none;
+}
+
+main .action-buttons button {
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  z-index: 999;
+}
+
+main .action-buttons .down-button {
+  transform: translateX(-100%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+main .action-buttons .up-button {
+  transform: translateY(-100%);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+
+
+
+/*=================================
+  main styling ends here
+=================================*/
